@@ -43,6 +43,14 @@ React Leaflet
 Node.js
 Express.js
 REST APIs
+
+## 🔗 Live Demo
+
+**App:** [https://sprint1-app.onrender.com](https://sprint1-app.onrender.com)
+
+> ⚠️ Note: This is hosted on Render's free tier — the backend may take 30-50 seconds to wake up on first load if it's been inactive.
+
+> This is a college/portfolio project demonstrating a full-stack disaster alert and emergency management system. It is not a real emergency service — please do not use it to report actual emergencies.
 CORS
 SQLite
 SQL
