@@ -1,3 +1,4 @@
+import { API_URL } from "../config";
 import "./Admindashboard.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +29,7 @@ function AdminDashboard() {
   const [selectedStatus, setSelectedStatus] = useState("");
 
   const fetchEmergencies = () => {
-    fetch("http://localhost:5000/api/emergency")
+    fetch(`${API_URL}/api/emergency`)
       .then((response) => response.json())
       .then((data) => {
         console.log("Emergency data:", data);
@@ -89,8 +90,9 @@ function AdminDashboard() {
     }
 
     fetch(
-      `http://localhost:5000/api/emergency/${selectedEmergency.id}/assign`,
-      {
+    `${API_URL}/api/emergency/${selectedEmergency.id}/assign`,
+    
+     {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -126,7 +128,8 @@ function AdminDashboard() {
     }
 
     fetch(
-      `http://localhost:5000/api/emergency/${selectedEmergency.id}/status`,
+    `${API_URL}/api/emergency/${selectedEmergency.id}/status`,
+    
       {
         method: "PATCH",
         headers: {
