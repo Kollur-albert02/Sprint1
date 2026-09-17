@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>About Us | Disaster Management System</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #333;
+        background-color: #f5f7f9;
+    }
+
+    /* HEADER */
+
+    header {
+        background-color: #182b3a;
+        color: white;
+        padding: 20px 6%;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    /* HERO SECTION */
+
+    .hero {
+        background-image:
+            linear-gradient(rgba(24, 43, 58, 0.75), rgba(24, 43, 58, 0.75)),
+            url("about-bg.jpg");
+
+        background-size: cover;
+        background-position: center;
+
+        padding: 80px 20px;
+        text-align: center;
+        color: white;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        max-width: 700px;
+        margin: auto;
+        line-height: 1.6;
+    }
+
+    /* ABOUT SECTION */
+
+    .about {
+        width: 85%;
+        max-width: 1100px;
+        margin: 50px auto;
+        background-color: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .about h2 {
+        text-align: center;
+        color: #182b3a;
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    .about p {
+        font-size: 17px;
+        line-height: 1.8;
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+
+    /* STORIES */
+
+    .stories {
+        width: 90%;
+        max-width: 1200px;
+        margin: 50px auto;
+    }
+
+    .stories h2 {
+        text-align: center;
+        color: #182b3a;
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .images {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .story-card {
+        background-color: white;
+        border-radius: 12px;
+        overflow: hidden;
+        text-decoration: none;
+        color: #333;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .story-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .story-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .story-text {
+        padding: 18px;
+        text-align: center;
+    }
+
+    .story-text h3 {
+        color: #182b3a;
+        margin-bottom: 8px;
+    }
+
+    .story-text p {
+        font-size: 14px;
+        color: #666;
+    }
+
+    /* FOOTER */
+
+    footer {
+        background-color: #182b3a;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 60px;
+    }
+
+    footer h3 {
+        margin-bottom: 10px;
+    }
+
+    .copyright {
+        font-size: 13px;
+        margin-top: 15px;
+        color: #ccc;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+        .images {
+            grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+        }
+
+        .about {
+            width: 92%;
+            padding: 25px;
+        }
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+    <div class="logo">
+        🚨 DISASTER ALERT
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>About Us</h1>
+
+    <p>
+        Working together to build safer, stronger and
+        disaster-resilient communities.
+    </p>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<main>
+
+    <section class="about">
+
+        <h2>Who We Are</h2>
+
+        <p>
+            Disaster Management System is a non-profit organization
+            dedicated to protecting communities and helping people
+            during natural and man-made disasters. Our main aim is to
+            spread awareness about disaster preparedness, provide
+            timely information, and encourage people to take the
+            necessary safety measures before, during, and after a disaster.
+        </p>
+
+        <p>
+            Our organization works to support people affected by
+            disasters such as floods, earthquakes, cyclones, landslides,
+            fires, and other emergencies. We focus on rescue and relief
+            activities, providing essential supplies such as food,
+            clean drinking water, clothing, and basic medical assistance
+            to affected communities.
+        </p>
+
+        <p>
+            Along with emergency relief, we believe that
+            <strong>prevention and preparedness can save lives.</strong>
+            We conduct awareness programs, safety campaigns, emergency
+            preparedness activities, and educational programs to teach
+            people how to respond during disasters.
+        </p>
+
+    </section>
+
+
+    <!-- DISASTER STORIES -->
+
+    <section class="stories">
+
+        <h2>Disaster Stories</h2>
+
+        <div class="images">
+
+            <!-- FLOOD -->
+
+            <a href="flood.html" class="story-card">
+
+                <img src="disaster2.jpg" alt="Flood disaster">
+
+                <div class="story-text">
+                    <h3>Flood Stories</h3>
+                    <p>
+                        Read real stories and experiences from
+                        communities affected by floods.
+                    </p>
+                </div>
+
+            </a>
+
+
+            <!-- EARTHQUAKE -->
+
+            <a href="earthquake.html" class="story-card">
+
+                <img src="disaster1.jpg" alt="Earthquake disaster">
+
+                <div class="story-text">
+                    <h3>Earthquake Stories</h3>
+                    <p>
+                        Learn about the experiences of people
+                        affected by earthquakes.
+                    </p>
+                </div>
+
+            </a>
+
+
+            <!-- FIRE -->
+
+            <a href="fire.html" class="story-card">
+
+                <img src="dissaster3.jpg" alt="Fire disaster">
+
+                <div class="story-text">
+                    <h3>Fire Stories</h3>
+                    <p>
+                        Discover stories and lessons from
+                        communities affected by fires.
+                    </p>
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>Disaster Management System</h3>
+
+    <p>
+        Stay informed and stay safe.
+    </p>
+
+    <p class="copyright">
+        © 2026 Disaster Management System
+    </p>
+
+</footer>
+```
+
+</body>
+
+</html>
