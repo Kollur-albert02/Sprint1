@@ -60,7 +60,9 @@ app.get('/api/weather', async (req, res) => {
     }
 });
 
+const PORT = process.env.PORT || 5500;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
-app.listen(5500,()=>{
-    console.log("Server running on http://localhost:5500");
 });
