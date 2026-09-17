@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rescue Mission News</title>
+
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f5f7f9;
+        color: #333;
+    }
+
+
+    /* HEADER */
+
+    header {
+        background-color: #182b3a;
+        color: white;
+
+        padding: 18px 40px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+
+    .home {
+        color: white;
+        text-decoration: none;
+
+        background-color: #d62828;
+
+        padding: 10px 18px;
+
+        border-radius: 20px;
+
+        transition: 0.3s;
+    }
+
+
+    .home:hover {
+        background-color: #a91e1e;
+    }
+
+
+    /* MAIN HEADING */
+
+    .heading {
+        text-align: center;
+
+        padding: 50px 20px 30px;
+    }
+
+
+    .heading h1 {
+        color:rgb(255,0,0);
+
+        font-size: 38px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .heading p {
+        color: #666;
+
+        font-size: 17px;
+
+        line-height: 1.6;
+    }
+
+
+    /* TIMELINE */
+
+    .timeline {
+
+        width: 85%;
+
+        max-width: 1000px;
+
+        margin: 20px auto 60px;
+
+        position: relative;
+         
+    
+
+   
+    }
+
+
+    /* VERTICAL LINE */
+
+    .timeline::before {
+
+        content: "";
+
+        position: absolute;
+
+        left: 50%;
+
+        top: 0;
+
+        bottom: 0;
+
+        width: 4px;
+
+        background-color: #182b3a;
+
+        transform: translateX(-50%);
+    }
+
+
+    /* NEWS ITEM */
+
+    .news {
+
+        position: relative;
+
+        width: 50%;
+
+        padding: 20px 45px;
+
+        margin-bottom: 55px;
+    }
+
+
+    .news:nth-child(odd) {
+
+        left: 0;
+
+        text-align: right;
+    }
+
+
+    .news:nth-child(even) {
+
+        left: 50%;
+
+        text-align: left;
+    }
+
+
+    /* CIRCLE */
+
+    .circle {
+
+        position: absolute;
+
+        width: 55px;
+
+        height: 55px;
+
+        background-color: #d62828;
+
+        border: 5px solid white;
+
+        border-radius: 50%;
+
+        top: 20px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        color: white;
+
+        font-size: 24px;
+
+        box-shadow: 0 0 0 3px #182b3a;
+
+        z-index: 2;
+    }
+
+
+    .news:nth-child(odd) .circle {
+
+        right: -27px;
+    }
+
+
+    .news:nth-child(even) .circle {
+
+        left: -27px;
+    }
+
+
+    /* STORY CARD */
+
+    .story-card {
+
+        min-height: 330px;
+
+        border-radius: 15px;
+
+        overflow: hidden;
+
+        position: relative;
+
+        background-size: cover;
+
+        background-position: center;
+
+        display: flex;
+
+        align-items: flex-end;
+
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+
+        transition: 0.3s;
+    }
+
+
+    .story-card:hover {
+
+        transform: translateY(-5px);
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+
+    /* DARK OVERLAY */
+
+    .story-card::before {
+
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background:
+            linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.85),
+                rgba(0, 0, 0, 0.15)
+            );
+    }
+
+
+    /* FLOOD */
+
+    .flood {
+
+        background-image: url("flood.jpg");
+    }
+
+
+    /* FIRE */
+
+    .fire {
+
+        background-image: url("fire.webp");
+    }
+
+
+    /* CYCLONE */
+
+    .cyclone {
+
+        background-image: url("cyclone.jpg");
+    }
+
+
+    /* COMMUNITY */
+
+    .community {
+
+        background-image: url("community.jpg");
+    }
+
+
+    /* STORY CONTENT */
+
+    .story-content {
+
+        position: relative;
+
+        z-index: 1;
+
+        color: white;
+
+        padding: 25px;
+
+        width: 100%;
+    }
+
+
+    .date {
+
+        color: #ffdddd;
+
+        font-weight: bold;
+
+        font-size: 13px;
+
+        margin-bottom: 8px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .story-content h2 {
+
+        font-size: 25px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .story-content p {
+
+        line-height: 1.6;
+
+        font-size: 15px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .read-more {
+
+        display: inline-block;
+
+        color: white;
+
+        background-color: #d62828;
+
+        text-decoration: none;
+
+        padding: 9px 16px;
+
+        border-radius: 20px;
+
+        font-weight: bold;
+
+        font-size: 14px;
+
+        transition: 0.3s;
+    }
+
+
+    .read-more:hover {
+
+        background-color: #a91e1e;
+    }
+
+
+    /* BOTTOM MESSAGE */
+
+    .message {
+
+        text-align: center;
+
+        padding: 45px 20px;
+
+        background-color: #182b3a;
+
+        color: white;
+    }
+
+
+    .message h2 {
+
+        margin-bottom: 10px;
+    }
+
+
+    .message p {
+
+        color: #ddd;
+
+        line-height: 1.6;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        background-color: #101e29;
+
+        color: white;
+
+        text-align: center;
+
+        padding: 20px;
+    }
+
+
+    .copyright {
+
+        font-size: small;
+
+        margin-top: 8px;
+
+        color: #ccc;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+        header {
+
+            padding: 15px 20px;
+        }
+
+
+        .logo {
+
+            font-size: 18px;
+        }
+
+
+        .timeline {
+
+            width: 95%;
+        }
+
+
+        .timeline::before {
+
+            left: 25px;
+        }
+
+
+        .news,
+        .news:nth-child(even),
+        .news:nth-child(odd) {
+
+            width: 100%;
+
+            left: 0;
+
+            text-align: left;
+
+            padding-left: 75px;
+
+            padding-right: 10px;
+        }
+
+
+        .news:nth-child(odd) .circle,
+        .news:nth-child(even) .circle {
+
+            left: 0;
+
+            right: auto;
+        }
+
+
+        .story-card {
+
+            min-height: 350px;
+        }
+
+
+        .story-content h2 {
+
+            font-size: 22px;
+        }
+
+    }
+main{
+    background-image:
+      linear-gradient(
+        rgba(214, 40, 40, 0.25),
+        rgba(24, 43, 58, 0.65)
+    ),
+        url("bg.avif");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    padding-bottom: 1px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+
+        🚨 DISASTER ALERT
+
+    </div>
+
+
+    <a href="index.html" class="home">
+
+        🏠 MainPage
+
+    </a>
+
+</header>
+
+
+
+<!-- HEADING -->
+<main>
+<section class="heading">
+
+    <h1>📰 Our Rescue Stories</h1>
+
+    <p>
+
+        Follow our journey of rescue, relief and community support.
+
+    </p>
+
+</section>
+
+
+
+<!-- TIMELINE -->
+
+<section class="timeline">
+
+
+    <!-- FLOOD -->
+
+    <div class="news">
+
+        <div class="circle">
+
+            🌊
+
+        </div>
+
+
+        <div class="story-card flood">
+
+            <div class="story-content">
+
+                <div class="date">
+
+                    AUGUST 2026
+
+                </div>
+
+
+                <h2>
+
+                    Flood Rescue Mission
+
+                </h2>
+
+
+                <p>
+
+                    Heavy rainfall caused severe flooding in several
+                    areas. Our volunteers worked together with local
+                    communities to help families move to safer locations.
+                    Food, drinking water and essential supplies were
+                    distributed to people affected by the flood.
+
+                </p>
+
+
+                <a href="flood-rescue.html" class="read-more">
+
+                    Read Full Story →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FIRE -->
+
+    <div class="news">
+
+        <div class="circle">
+
+            🔥
+
+        </div>
+
+
+        <div class="story-card fire">
+
+            <div class="story-content">
+
+                <div class="date">
+
+                    JULY 2026
+
+                </div>
+
+
+                <h2>
+
+                    Fire Rescue Operation
+
+                </h2>
+
+
+                <p>
+
+                    A major fire affected a residential area.
+                    Our volunteers immediately contacted emergency
+                    services and helped residents move away from
+                    the affected area while emergency teams arrived.
+
+                </p>
+
+
+                <a href="fire-rescue.html" class="read-more">
+
+                    Read Full Story →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CYCLONE -->
+
+    <div class="news">
+
+        <div class="circle">
+
+            🌀
+
+        </div>
+
+
+        <div class="story-card cyclone">
+
+            <div class="story-content">
+
+                <div class="date">
+
+                    JUNE 2026
+
+                </div>
+
+
+                <h2>
+
+                    Cyclone Relief Mission
+
+                </h2>
+
+
+                <p>
+
+                    Following a powerful cyclone, our team organized
+                    a relief campaign for affected families.
+                    Volunteers distributed food, water, medicines
+                    and other essential items to the community.
+
+                </p>
+
+
+                <a href="cyclone-rescue.html" class="read-more">
+
+                    Read Full Story →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- COMMUNITY -->
+
+    <div class="news">
+
+        <div class="circle">
+
+            🏠
+
+        </div>
+
+
+        <div class="story-card community">
+
+            <div class="story-content">
+
+                <div class="date">
+
+                    MAY 2026
+
+                </div>
+
+
+                <h2>
+
+                    Community Support Drive
+
+                </h2>
+
+
+                <p>
+
+                    Our organization conducted a community support
+                    campaign to educate people about disaster
+                    preparedness. Volunteers taught families how
+                    to prepare emergency kits and create basic
+                    emergency plans.
+
+                </p>
+
+
+                <a href="community-support.html" class="read-more">
+
+                    Read Full Story →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+</main>
+
+
+<!-- MESSAGE -->
+
+<section class="message">
+
+    <h2>
+
+        🤝 Together, We Can Save Lives
+
+    </h2>
+
+
+    <p>
+
+        Every volunteer, every helping hand and every act
+        of kindness can make a difference during a disaster.
+
+    </p>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+
+        Disaster Management System
+
+    </h3>
+
+
+    <p>
+
+        Stay informed and stay safe.
+
+    </p>
+
+
+    <p class="copyright">
+
+        © 2026 Disaster Management System
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

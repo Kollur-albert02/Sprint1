@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Disaster Resources</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: #f4f6f8;
+
+            color: #333;
+        }
+
+
+        /* HEADER */
+
+        header {
+
+            background-color: #182b3a;
+
+            color: white;
+
+            padding: 18px 40px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .logo {
+
+            font-size: 22px;
+
+            font-weight: bold;
+        }
+
+
+        .home {
+
+            color: white;
+
+            text-decoration: none;
+
+            background-color: #d62828;
+
+            padding: 10px 18px;
+
+            border-radius: 25px;
+        }
+
+
+        /* HEADING */
+
+        .heading {
+
+            text-align: center;
+
+            padding: 50px 20px 30px;
+        }
+
+
+        .heading h1 {
+
+            color: #182b3a;
+
+            font-size: 38px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .heading p {
+
+            color: #666;
+
+            font-size: 17px;
+
+            line-height: 1.6;
+        }
+
+
+        /* RESOURCE SECTION */
+
+        .resources {
+
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: 20px auto 60px;
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 35px;
+        }
+
+
+        /* RESOURCE CIRCLE */
+
+        .resource {
+
+            width: 230px;
+
+            height: 230px;
+
+            background-color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            box-shadow: 0 5px 15px #ccc;
+
+            transition: 0.3s;
+        }
+
+
+        .resource:hover {
+
+            transform: scale(1.07);
+        }
+
+
+        .resource-icon {
+
+            font-size: 45px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .resource h2 {
+
+            color: #182b3a;
+
+            font-size: 20px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .resource p {
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            color: #555;
+        }
+
+
+        /* EMERGENCY KIT */
+
+        .kit {
+
+            width: 85%;
+
+            max-width: 1000px;
+
+            margin: 0 auto 60px;
+
+            background-color: white;
+
+            padding: 35px;
+
+            border-radius: 40px 15px 40px 15px;
+
+            box-shadow: 0 4px 12px #ccc;
+
+            border-left: 6px solid #d62828;
+        }
+
+
+        .kit h2 {
+
+            color: #182b3a;
+
+            margin-bottom: 15px;
+        }
+
+
+        .kit p {
+
+            line-height: 1.6;
+
+            margin-bottom: 15px;
+
+            color: #555;
+        }
+
+
+        .kit ul {
+
+            padding-left: 25px;
+
+            line-height: 1.9;
+        }
+
+
+        /* DOWNLOAD / LEARN */
+
+        .guides {
+
+            background-color: #182b3a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 45px 20px;
+        }
+
+
+        .guides h2 {
+
+            margin-bottom: 12px;
+
+            font-size: 28px;
+        }
+
+
+        .guides p {
+
+            color: #ddd;
+
+            margin-bottom: 25px;
+
+            line-height: 1.6;
+        }
+
+
+        .guide-button {
+
+            display: inline-block;
+
+            background-color: #d62828;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 25px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+        }
+
+
+        .guide-button:hover {
+
+            background-color: #a91e1e;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+
+            background-color: #101e29;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+
+        .copyright {
+
+            font-size: small;
+
+            margin-top: 8px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding: 15px 20px;
+            }
+
+
+            .logo {
+
+                font-size: 18px;
+            }
+
+
+            .resource {
+
+                width: 210px;
+
+                height: 210px;
+            }
+
+
+            .kit {
+
+                width: 90%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            🚨 DISASTER ALERT
+
+        </div>
+
+
+        <a href="index.html" class="home">
+
+            🏠 MainPage
+
+        </a>
+
+    </header>
+
+
+
+    <!-- HEADING -->
+
+    <section class="heading">
+
+        <h1>🎒 Disaster Resources</h1>
+
+        <p>
+
+            Essential resources and supplies that can help
+
+            you stay prepared before, during and after a disaster.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- RESOURCE CIRCLES -->
+
+    <section class="resources">
+
+
+        <!-- WATER -->
+
+        <div class="resource">
+
+            <div class="resource-icon">
+
+                💧
+
+            </div>
+
+            <h2>Drinking Water</h2>
+
+            <p>
+
+                Keep a sufficient supply of clean drinking
+
+                water available during emergencies.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- FOOD -->
+
+        <div class="resource">
+
+            <div class="resource-icon">
+
+                🥫
+
+            </div>
+
+            <h2>Emergency Food</h2>
+
+            <p>
+
+                Store non-perishable food that can be safely
+
+                consumed during an emergency.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- FIRST AID -->
+
+        <div class="resource">
+
+            <div class="resource-icon">
+
+                🩹
+
+            </div>
+
+            <h2>First Aid Kit</h2>
+
+            <p>
+
+                Keep basic first-aid supplies ready for
+
+                minor injuries and emergencies.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- FLASHLIGHT -->
+
+        <div class="resource">
+
+            <div class="resource-icon">
+
+                🔦
+
+            </div>
+
+            <h2>Flashlight</h2>
+
+            <p>
+
+                Keep a flashlight and spare batteries ready
+
+                in case of power failure.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- RADIO -->
+
+        <div class="resource">
+
+            <div class="resource-icon">
+
+                📻
+
+            </div>
+
+            <h2>Emergency Radio</h2>
+
+            <p>
+
+                A battery-powered radio can help you receive
+
+                important emergency updates.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- DOCUMENTS -->
+
+        <div class="resource">
+
+            <div class="resource-icon">
+
+                📄
+
+            </div>
+
+            <h2>Important Documents</h2>
+
+            <p>
+
+                Keep copies of important documents protected
+
+                and easily accessible.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- EMERGENCY KIT -->
+
+    <section class="kit">
+
+        <h2>🎒 Build Your Emergency Kit</h2>
+
+        <p>
+
+            Prepare an emergency bag before a disaster occurs.
+
+            Keep it somewhere that is easy to access and make
+
+            sure your family members know where it is.
+
+        </p>
+
+
+        <ul>
+
+            <li>Drinking water</li>
+
+            <li>Non-perishable food</li>
+
+            <li>First-aid supplies</li>
+
+            <li>Flashlight and extra batteries</li>
+
+            <li>Battery-powered radio</li>
+
+            <li>Power bank</li>
+
+            <li>Basic medicines and personal essentials</li>
+
+            <li>Copies of important documents</li>
+
+            <li>Whistle</li>
+
+            <li>Emergency contact information</li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- GUIDES -->
+
+    <section class="guides">
+
+        <h2>📚 Disaster Preparedness Guides</h2>
+
+        <p>
+
+            Learn how to prepare your home and family for
+
+            different types of disasters.
+
+        </p>
+
+
+        <a href="emerhelp.html"
+           class="guide-button">
+
+            Learn Safety Tips →
+
+        </a>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+
+            Disaster Management System
+
+        </h3>
+
+
+        <p>
+
+            Stay informed and stay safe.
+
+        </p>
+
+
+        <p class="copyright">
+
+            © 2026 Disaster Management System
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+

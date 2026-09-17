@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Early Warning & Alerts</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+
+        /* HEADER */
+
+        header {
+            background-color: #182b3a;
+            color: white;
+            padding: 18px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .home {
+            color: white;
+            text-decoration: none;
+            background-color: #d62828;
+            padding: 10px 18px;
+            border-radius: 25px;
+        }
+
+
+        /* HEADING */
+
+        .heading {
+            text-align: center;
+            padding: 50px 20px 30px;
+        }
+
+        .heading h1 {
+            color: #182b3a;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .heading p {
+            color: #666;
+            font-size: 17px;
+        }
+
+
+        /* CURRENT CONDITIONS */
+
+        .current {
+            width: 85%;
+            margin: 20px auto 40px;
+
+            background-color: white;
+
+            padding: 35px;
+
+            text-align: center;
+
+            border-radius: 25px;
+
+            box-shadow: 0 4px 12px #ccc;
+        }
+
+        .current h2 {
+            color: #182b3a;
+            margin-bottom: 15px;
+        }
+
+        #temperature {
+            font-size: 45px;
+            font-weight: bold;
+            color: #d62828;
+            margin: 15px;
+        }
+
+        #weather {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        #location {
+    font-size: 20px;
+    font-weight: bold;
+    color: #182b3a;
+    margin-bottom: 5px;
+}
+
+
+        /* CURRENT WARNING */
+
+        .warning {
+            width: 85%;
+
+            margin: 0 auto 50px;
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            background-color: #fff3cd;
+
+            border-left: 6px solid #f4a261;
+        }
+
+        .warning h2 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        #warning-text {
+            line-height: 1.6;
+        }
+
+
+        /* FORECAST */
+
+        .forecast {
+            background-color: #182b3a;
+
+            color: white;
+
+            padding: 45px 20px;
+
+            text-align: center;
+        }
+
+        .forecast h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .forecast-container {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .forecast-item {
+            width: 190px;
+
+            padding: 25px;
+
+            background-color: white;
+
+            color: #333;
+
+            border-radius: 50px;
+
+            text-align: center;
+        }
+
+        .forecast-item h3 {
+            color: #182b3a;
+            margin-bottom: 10px;
+        }
+
+        .forecast-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .forecast-item p {
+            line-height: 1.6;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: #101e29;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+        .copyright {
+            font-size: small;
+            margin-top: 8px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .current,
+            .warning {
+                width: 90%;
+            }
+
+            .forecast-item {
+                width: 180px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            🚨 DISASTER ALERT
+        </div>
+
+        <a href="index.html" class="home">
+            🏠 Home
+        </a>
+
+    </header>
+
+
+
+    <!-- HEADING -->
+
+    <section class="heading">
+
+        <h1>⚠️ Early Warning & Alerts</h1>
+
+        <p>
+            Live weather information and upcoming forecast
+        </p>
+
+    </section>
+
+
+
+    <!-- CURRENT CONDITIONS -->
+
+   <section class="current"> 
+    <h2>📍 Current Conditions</h2>
+
+    <div id="location">
+        Detecting your location...
+    </div>
+
+    <div id="temperature">
+        Loading...
+    </div>
+
+    <div id="weather">
+        Getting latest weather information...
+    </div>
+
+    <p>💨 Wind: <span id="wind">Loading...</span> km/h</p> 
+</section>
+
+
+
+    <!-- CURRENT WARNING -->
+
+    <section class="warning">
+
+        <h2>
+            🚨 Current Warning
+        </h2>
+
+        <p id="warning-text">
+            Checking current weather conditions...
+        </p>
+
+    </section>
+
+
+
+    <!-- UPCOMING FORECAST -->
+
+    <section class="forecast">
+
+        <h2>
+            🔮 Upcoming Forecast
+        </h2>
+
+
+        <div
+            class="forecast-container"
+            id="forecast-container">
+
+            <!-- JavaScript will insert forecast here -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            Disaster Management System
+        </h3>
+
+        <p>
+            Stay informed and stay safe.
+        </p>
+
+        <p class="copyright">
+            © 2026 Disaster Management System
+        </p>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="alert.js"></script>
+
+</body>
+
+</html>

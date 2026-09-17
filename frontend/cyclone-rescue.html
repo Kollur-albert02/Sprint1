@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Cyclone Relief Mission | Disaster Management System</title>
+
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f6f8;
+        color: #333;
+    }
+
+
+    /* HEADER */
+
+    header {
+        background-color: #182b3a;
+        color: white;
+
+        padding: 18px 40px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+
+    .home {
+        color: white;
+        text-decoration: none;
+
+        background-color: #d62828;
+
+        padding: 10px 18px;
+
+        border-radius: 20px;
+
+        transition: 0.3s;
+    }
+
+
+    .home:hover {
+        background-color: #a91e1e;
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height: 450px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 60px 20px;
+
+        background-image:
+            linear-gradient(
+                rgba(24, 43, 58, 0.70),
+                rgba(24, 43, 58, 0.70)
+            ),
+            url("cyclone.jpg");
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+
+    .hero-content {
+
+        max-width: 850px;
+
+        color: white;
+    }
+
+
+    .hero-icon {
+
+        font-size: 60px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 45px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .hero .date {
+
+        color: #ffdddd;
+
+        font-weight: bold;
+
+        letter-spacing: 1px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .hero p {
+
+        font-size: 18px;
+
+        line-height: 1.7;
+
+        color: #eeeeee;
+    }
+
+
+    /* STORY */
+
+    .story {
+
+        width: 85%;
+
+        max-width: 1000px;
+
+        margin: 50px auto;
+    }
+
+
+    .story-section {
+
+        background-color: white;
+
+        padding: 35px;
+
+        margin-bottom: 25px;
+
+        border-radius: 15px;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+        border-left: 5px solid #d62828;
+    }
+
+
+    .story-section h2 {
+
+        color: #182b3a;
+
+        margin-bottom: 15px;
+
+        font-size: 25px;
+    }
+
+
+    .story-section p {
+
+        line-height: 1.8;
+
+        color: #444;
+
+        font-size: 16px;
+    }
+
+
+    /* HIGHLIGHTS */
+
+    .highlights {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 20px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .highlight {
+
+        background-color: #182b3a;
+
+        color: white;
+
+        padding: 25px;
+
+        text-align: center;
+
+        border-radius: 12px;
+    }
+
+
+    .highlight-icon {
+
+        font-size: 35px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .highlight h3 {
+
+        margin-bottom: 8px;
+    }
+
+
+    .highlight p {
+
+        color: #ddd;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+
+    /* RELIEF ACTIVITIES */
+
+    .relief {
+
+        background-color: #eef2f5;
+
+        padding: 30px;
+
+        border-radius: 12px;
+
+        margin-top: 15px;
+    }
+
+
+    .relief ul {
+
+        padding-left: 25px;
+
+        line-height: 2;
+    }
+
+
+    /* SAFETY */
+
+    .safety {
+
+        background-color: #182b3a;
+
+        color: white;
+
+        padding: 40px;
+
+        text-align: center;
+
+        margin-top: 30px;
+
+        border-radius: 15px;
+    }
+
+
+    .safety h2 {
+
+        margin-bottom: 15px;
+    }
+
+
+    .safety p {
+
+        color: #ddd;
+
+        line-height: 1.7;
+
+        margin-bottom: 20px;
+    }
+
+
+    .safety-button {
+
+        display: inline-block;
+
+        background-color: #d62828;
+
+        color: white;
+
+        text-decoration: none;
+
+        padding: 12px 22px;
+
+        border-radius: 25px;
+
+        font-weight: bold;
+    }
+
+
+    .safety-button:hover {
+
+        background-color: #a91e1e;
+    }
+
+
+    /* BACK BUTTON */
+
+    .back {
+
+        text-align: center;
+
+        margin: 40px 0 60px;
+    }
+
+
+    .back a {
+
+        display: inline-block;
+
+        color: #182b3a;
+
+        border: 2px solid #182b3a;
+
+        text-decoration: none;
+
+        padding: 11px 22px;
+
+        border-radius: 25px;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+    }
+
+
+    .back a:hover {
+
+        background-color: #182b3a;
+
+        color: white;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        background-color: #101e29;
+
+        color: white;
+
+        text-align: center;
+
+        padding: 25px;
+    }
+
+
+    footer p {
+
+        margin-top: 8px;
+    }
+
+
+    .copyright {
+
+        font-size: small;
+
+        color: #ccc;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+        header {
+
+            padding: 15px 20px;
+        }
+
+
+        .logo {
+
+            font-size: 18px;
+        }
+
+
+        .hero {
+
+            min-height: 400px;
+        }
+
+
+        .hero h1 {
+
+            font-size: 32px;
+        }
+
+
+        .hero p {
+
+            font-size: 16px;
+        }
+
+
+        .story {
+
+            width: 90%;
+        }
+
+
+        .story-section {
+
+            padding: 25px;
+        }
+
+
+        .highlights {
+
+            grid-template-columns: 1fr;
+        }
+
+
+        .safety {
+
+            padding: 30px 20px;
+        }
+
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+
+        🚨 DISASTER ALERT
+
+    </div>
+
+
+    <a href="index.html" class="home">
+
+        🏠 Home
+
+    </a>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-icon">
+
+            🌀
+
+        </div>
+
+
+        <div class="date">
+
+            JUNE 2026
+
+        </div>
+
+
+        <h1>
+
+            Cyclone Relief Mission
+
+        </h1>
+
+
+        <p>
+
+            A community relief effort focused on supporting
+            families affected by a powerful cyclone and
+            helping communities recover after the storm.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- STORY -->
+
+<main class="story">
+
+
+    <!-- WHAT HAPPENED -->
+
+    <section class="story-section">
+
+        <h2>
+
+            🌀 What Happened?
+
+        </h2>
+
+
+        <p>
+
+            A powerful cyclone affected several communities,
+            bringing strong winds and heavy rainfall.
+            The storm caused disruption to normal life and
+            affected homes, roads and access to essential
+            services.
+
+            <br><br>
+
+            Following the cyclone, many families required
+            assistance with food, clean drinking water and
+            other essential supplies. Some areas also faced
+            difficulties with transportation and communication.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- HIGHLIGHTS -->
+
+    <section class="highlights">
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+
+                🏠
+
+            </div>
+
+            <h3>
+
+                Community Assistance
+
+            </h3>
+
+            <p>
+
+                Volunteers helped affected families
+                identify their immediate needs.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+
+                💧
+
+            </div>
+
+            <h3>
+
+                Essential Supplies
+
+            </h3>
+
+            <p>
+
+                Food, drinking water and basic emergency
+                materials were provided to affected people.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+
+                🤝
+
+            </div>
+
+            <h3>
+
+                Community Recovery
+
+            </h3>
+
+            <p>
+
+                Volunteers supported communities as they
+                began recovering from the effects of the storm.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- RESPONSE -->
+
+    <section class="story-section">
+
+        <h2>
+
+            🚨 Relief Response
+
+        </h2>
+
+
+        <p>
+
+            After the cyclone passed and conditions became
+            safer, volunteers focused on identifying families
+            who required immediate assistance.
+
+            <br><br>
+
+            Teams helped organize the distribution of food,
+            drinking water, medicines and other basic
+            emergency supplies. Information was also shared
+            with residents about available assistance and
+            safety precautions.
+
+            <br><br>
+
+            Volunteers worked with community members to
+            ensure that assistance was organized and that
+            people who needed additional support were not
+            overlooked.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- CHALLENGES -->
+
+    <section class="story-section">
+
+        <h2>
+
+            ⚠️ Challenges Faced
+
+        </h2>
+
+
+        <p>
+
+            Cyclones can create several challenges at the same
+            time. Strong winds, flooding and damaged roads can
+            make it difficult for emergency teams and volunteers
+            to reach affected communities.
+
+            <br><br>
+
+            Power and communication disruptions can also make
+            it harder for people to receive important information.
+            Volunteers therefore need to work carefully and
+            coordinate with emergency authorities.
+
+        </p>
+
+
+        <div class="relief">
+
+            <ul>
+
+                <li>
+                    Damaged roads and transportation difficulties
+                </li>
+
+                <li>
+                    Heavy rainfall and flooding
+                </li>
+
+                <li>
+                    Power and communication interruptions
+                </li>
+
+                <li>
+                    Shortages of essential supplies
+                </li>
+
+                <li>
+                    Supporting vulnerable members of the community
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- RELIEF ACTIVITIES -->
+
+    <section class="story-section">
+
+        <h2>
+
+            🤝 Relief Activities
+
+        </h2>
+
+
+        <p>
+
+            Community volunteers assisted with organizing
+            relief materials and distributing essential items
+            to affected families.
+
+            <br><br>
+
+            The relief effort focused on supporting people
+            with basic necessities while helping communities
+            begin the process of recovery.
+
+        </p>
+
+
+        <div class="relief">
+
+            <ul>
+
+                <li>
+                    Distribution of drinking water
+                </li>
+
+                <li>
+                    Distribution of food supplies
+                </li>
+
+                <li>
+                    Assistance with basic emergency materials
+                </li>
+
+                <li>
+                    Sharing safety and recovery information
+                </li>
+
+                <li>
+                    Supporting affected families
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LESSONS -->
+
+    <section class="story-section">
+
+        <h2>
+
+            📚 Lessons Learned
+
+        </h2>
+
+
+        <div class="relief">
+
+            <ul>
+
+                <li>
+                    Monitor official cyclone and weather warnings.
+                </li>
+
+                <li>
+                    Prepare an emergency kit before the storm arrives.
+                </li>
+
+                <li>
+                    Secure loose objects around your home.
+                </li>
+
+                <li>
+                    Keep drinking water and non-perishable food available.
+                </li>
+
+                <li>
+                    Know your nearest safe shelter or evacuation location.
+                </li>
+
+                <li>
+                    Follow evacuation instructions from authorities.
+                </li>
+
+                <li>
+                    Avoid damaged roads and areas affected by flooding.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SAFETY -->
+
+    <section class="safety">
+
+        <h2>
+
+            🌀 Cyclone Safety
+
+        </h2>
+
+
+        <p>
+
+            Stay informed through official weather and
+            emergency alerts. Prepare essential supplies,
+            remain indoors when advised and follow evacuation
+            instructions from local authorities.
+
+        </p>
+
+
+        <a href="emerghelp.html"
+           class="safety-button">
+
+            View Safety Tips →
+
+        </a>
+
+    </section>
+
+
+
+    <!-- BACK -->
+
+    <div class="back">
+
+        <a href="news.html">
+
+            ← Back to Rescue Stories
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+
+        Disaster Management System
+
+    </h3>
+
+
+    <p>
+
+        Stay informed and stay safe.
+
+    </p>
+
+
+    <p class="copyright">
+
+        © 2026 Disaster Management System
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

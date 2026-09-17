@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Flood Rescue Mission | Disaster Management System</title>
+
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f6f8;
+        color: #333;
+    }
+
+
+    /* HEADER */
+
+    header {
+        background-color: #182b3a;
+        color: white;
+
+        padding: 18px 40px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+
+    .home {
+        color: white;
+        text-decoration: none;
+
+        background-color: #d62828;
+
+        padding: 10px 18px;
+
+        border-radius: 20px;
+
+        transition: 0.3s;
+    }
+
+
+    .home:hover {
+        background-color: #a91e1e;
+    }
+
+
+    /* HERO SECTION */
+
+    .hero {
+
+        min-height: 450px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 60px 20px;
+
+        background-image:
+            linear-gradient(
+                rgba(24, 43, 58, 0.70),
+                rgba(24, 43, 58, 0.70)
+            ),
+            url("flood.jpg");
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+
+    .hero-content {
+
+        max-width: 850px;
+
+        color: white;
+    }
+
+
+    .hero-icon {
+
+        font-size: 60px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 45px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .hero .date {
+
+        color: #ffdddd;
+
+        font-weight: bold;
+
+        letter-spacing: 1px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .hero p {
+
+        font-size: 18px;
+
+        line-height: 1.7;
+
+        color: #eeeeee;
+    }
+
+
+    /* STORY */
+
+    .story {
+
+        width: 85%;
+
+        max-width: 1000px;
+
+        margin: 50px auto;
+
+    }
+
+
+    .story-section {
+
+        background-color: white;
+
+        padding: 35px;
+
+        margin-bottom: 25px;
+
+        border-radius: 15px;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+        border-left: 5px solid #d62828;
+    }
+
+
+    .story-section h2 {
+
+        color: #182b3a;
+
+        margin-bottom: 15px;
+
+        font-size: 25px;
+    }
+
+
+    .story-section p {
+
+        line-height: 1.8;
+
+        color: #444;
+
+        font-size: 16px;
+
+    }
+
+
+    /* HIGHLIGHTS */
+
+    .highlights {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 20px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .highlight {
+
+        background-color: #182b3a;
+
+        color: white;
+
+        padding: 25px;
+
+        text-align: center;
+
+        border-radius: 12px;
+    }
+
+
+    .highlight-icon {
+
+        font-size: 35px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .highlight h3 {
+
+        margin-bottom: 8px;
+    }
+
+
+    .highlight p {
+
+        color: #ddd;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+
+    /* LESSONS */
+
+    .lessons {
+
+        background-color: #eef2f5;
+
+        padding: 30px;
+
+        border-radius: 12px;
+
+        margin-top: 15px;
+    }
+
+
+    .lessons ul {
+
+        padding-left: 25px;
+
+        line-height: 2;
+    }
+
+
+    /* SAFETY BOX */
+
+    .safety {
+
+        background-color: #182b3a;
+
+        color: white;
+
+        padding: 40px;
+
+        text-align: center;
+
+        margin-top: 30px;
+
+        border-radius: 15px;
+    }
+
+
+    .safety h2 {
+
+        margin-bottom: 15px;
+    }
+
+
+    .safety p {
+
+        color: #ddd;
+
+        line-height: 1.7;
+
+        margin-bottom: 20px;
+    }
+
+
+    .safety-button {
+
+        display: inline-block;
+
+        background-color: #d62828;
+
+        color: white;
+
+        text-decoration: none;
+
+        padding: 12px 22px;
+
+        border-radius: 25px;
+
+        font-weight: bold;
+    }
+
+
+    .safety-button:hover {
+
+        background-color: #a91e1e;
+    }
+
+
+    /* BACK BUTTON */
+
+    .back {
+
+        text-align: center;
+
+        margin: 40px 0 60px;
+    }
+
+
+    .back a {
+
+        display: inline-block;
+
+        color: #182b3a;
+
+        border: 2px solid #182b3a;
+
+        text-decoration: none;
+
+        padding: 11px 22px;
+
+        border-radius: 25px;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+    }
+
+
+    .back a:hover {
+
+        background-color: #182b3a;
+
+        color: white;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        background-color: #101e29;
+
+        color: white;
+
+        text-align: center;
+
+        padding: 25px;
+    }
+
+
+    footer p {
+
+        margin-top: 8px;
+
+    }
+
+
+    .copyright {
+
+        font-size: small;
+
+        color: #ccc;
+
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+        header {
+
+            padding: 15px 20px;
+        }
+
+
+        .logo {
+
+            font-size: 18px;
+        }
+
+
+        .hero {
+
+            min-height: 400px;
+        }
+
+
+        .hero h1 {
+
+            font-size: 32px;
+        }
+
+
+        .hero p {
+
+            font-size: 16px;
+        }
+
+
+        .story {
+
+            width: 90%;
+        }
+
+
+        .story-section {
+
+            padding: 25px;
+        }
+
+
+        .highlights {
+
+            grid-template-columns: 1fr;
+        }
+
+
+        .safety {
+
+            padding: 30px 20px;
+        }
+
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+
+        🚨 DISASTER ALERT
+
+    </div>
+
+
+    <a href="index.html" class="home">
+
+        🏠 Home
+
+    </a>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-icon">
+
+            🌊
+
+        </div>
+
+
+        <div class="date">
+
+            AUGUST 2026
+
+        </div>
+
+
+        <h1>
+
+            Flood Rescue Mission
+
+        </h1>
+
+
+        <p>
+
+            A community response focused on helping
+            families affected by heavy rainfall and flooding,
+            providing essential supplies and guiding people
+            toward safer locations.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- STORY -->
+
+<main class="story">
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="story-section">
+
+        <h2>
+
+            🌧️ What Happened?
+
+        </h2>
+
+
+        <p>
+
+            Heavy rainfall caused water levels to rise rapidly
+            in several areas, resulting in flooding and making
+            normal transportation difficult. Several families
+            were affected as water entered residential areas
+            and access to essential services became challenging.
+
+            <br><br>
+
+            The situation highlighted the importance of
+            emergency preparedness, communication and quick
+            coordination between communities and emergency
+            response groups.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- HIGHLIGHTS -->
+
+    <section class="highlights">
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+
+                👨‍👩‍👧‍👦
+
+            </div>
+
+            <h3>
+
+                Community Support
+
+            </h3>
+
+            <p>
+
+                Volunteers worked with local residents
+                to identify people who needed assistance.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+
+                🥫
+
+            </div>
+
+            <h3>
+
+                Essential Supplies
+
+            </h3>
+
+            <p>
+
+                Food, clean drinking water and other
+                essential supplies were distributed.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+
+                🛟
+
+            </div>
+
+            <h3>
+
+                Safe Relocation
+
+            </h3>
+
+            <p>
+
+                Families were guided toward safer
+                locations away from flooded areas.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- RESPONSE -->
+
+    <section class="story-section">
+
+        <h2>
+
+            🚨 Rescue Response
+
+        </h2>
+
+
+        <p>
+
+            Volunteers first focused on communicating with
+            affected residents and identifying areas where
+            assistance was required. People were encouraged
+            to move away from dangerous locations and follow
+            instructions from emergency authorities.
+
+            <br><br>
+
+            Volunteers also helped coordinate the distribution
+            of basic supplies. Particular attention was given
+            to children, elderly people and families who
+            required additional assistance.
+
+            <br><br>
+
+            Throughout the response, communication and
+            cooperation with local authorities and emergency
+            services remained an important part of the
+            operation.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- CHALLENGES -->
+
+    <section class="story-section">
+
+        <h2>
+
+            ⚠️ Challenges Faced
+
+        </h2>
+
+
+        <p>
+
+            Flood conditions can make roads difficult to access
+            and can interrupt communication and transportation.
+            Volunteers had to work carefully while avoiding
+            unsafe areas and rapidly changing water conditions.
+
+            <br><br>
+
+            The situation demonstrated why emergency teams
+            need proper equipment, reliable communication
+            systems and well-organized evacuation plans.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- RELIEF -->
+
+    <section class="story-section">
+
+        <h2>
+
+            🤝 Relief and Community Support
+
+        </h2>
+
+
+        <p>
+
+            Community members contributed by helping distribute
+            supplies and sharing information with affected
+            families. Volunteers supported the preparation and
+            distribution of food, drinking water and basic
+            emergency materials.
+
+            <br><br>
+
+            The combined effort showed how cooperation between
+            residents, volunteers and emergency services can
+            help communities respond more effectively during
+            difficult situations.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- LESSONS -->
+
+    <section class="story-section">
+
+        <h2>
+
+            📚 Lessons Learned
+
+        </h2>
+
+
+        <div class="lessons">
+
+            <ul>
+
+                <li>
+                    Keep an emergency kit ready before flooding occurs.
+                </li>
+
+                <li>
+                    Stay informed through official emergency alerts.
+                </li>
+
+                <li>
+                    Avoid walking or driving through floodwater.
+                </li>
+
+                <li>
+                    Keep important documents protected and accessible.
+                </li>
+
+                <li>
+                    Know the safest evacuation route from your home.
+                </li>
+
+                <li>
+                    Follow instructions from emergency authorities.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SAFETY -->
+
+    <section class="safety">
+
+        <h2>
+
+            🌊 Flood Safety
+
+        </h2>
+
+
+        <p>
+
+            Preparation can significantly improve your ability
+            to respond during a flood. Keep essential supplies
+            ready, stay informed about weather conditions and
+            follow official evacuation instructions when
+            necessary.
+
+        </p>
+
+
+        <a href="emerhelp.html"
+           class="safety-button">
+
+            View Safety Tips →
+
+        </a>
+
+    </section>
+
+
+
+    <!-- BACK -->
+
+    <div class="back">
+
+        <a href="news.html">
+
+            ← Back to Rescue Stories
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+
+        Disaster Management System
+
+    </h3>
+
+
+    <p>
+
+        Stay informed and stay safe.
+
+    </p>
+
+
+    <p class="copyright">
+
+        © 2026 Disaster Management System
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

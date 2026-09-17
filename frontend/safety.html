@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Emergency Safety Tips | Disaster Management System</title>
+
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f6f8;
+        color: #333;
+    }
+
+
+    /* HEADER */
+
+    header {
+        background-color: #182b3a;
+        color: white;
+        padding: 18px 40px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+
+    .home {
+        color: white;
+        text-decoration: none;
+        background-color: #d62828;
+
+        padding: 10px 18px;
+
+        border-radius: 25px;
+
+        transition: 0.3s;
+    }
+
+
+    .home:hover {
+        background-color: #a91e1e;
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        background:
+            linear-gradient(
+                rgba(24, 43, 58, 0.85),
+                rgba(24, 43, 58, 0.85)
+            ),
+            url("emergency.jpg");
+
+        background-size: cover;
+        background-position: center;
+
+        text-align: center;
+
+        color: white;
+
+        padding: 75px 20px;
+    }
+
+
+    .hero h1 {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+
+    .hero p {
+        max-width: 750px;
+        margin: auto;
+
+        font-size: 17px;
+        line-height: 1.7;
+
+        color: #eeeeee;
+    }
+
+
+    /* INTRODUCTION */
+
+    .intro {
+
+        width: 85%;
+        max-width: 1000px;
+
+        margin: 45px auto 30px;
+
+        background-color: white;
+
+        padding: 35px;
+
+        border-radius: 12px;
+
+        box-shadow: 0 4px 12px #ccc;
+
+        text-align: center;
+    }
+
+
+    .intro h2 {
+
+        color: #182b3a;
+
+        margin-bottom: 15px;
+
+        font-size: 28px;
+    }
+
+
+    .intro p {
+
+        line-height: 1.7;
+
+        color: #555;
+    }
+
+
+    /* SAFETY CONTAINER */
+
+    .safety-container {
+
+        width: 90%;
+        max-width: 1100px;
+
+        margin: 40px auto 60px;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 25px;
+    }
+
+
+    /* SAFETY CARD */
+
+    .safety-card {
+
+        background-color: white;
+
+        padding: 30px;
+
+        border-radius: 12px;
+
+        box-shadow: 0 4px 12px #ccc;
+
+        border-top: 5px solid #d62828;
+
+        transition: 0.3s;
+    }
+
+
+    .safety-card:hover {
+
+        transform: translateY(-5px);
+
+        box-shadow: 0 7px 18px #bbb;
+    }
+
+
+    .safety-icon {
+
+        font-size: 40px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .safety-card h2 {
+
+        color: #182b3a;
+
+        margin-bottom: 15px;
+
+        font-size: 24px;
+    }
+
+
+    .safety-card p {
+
+        color: #555;
+
+        line-height: 1.6;
+
+        margin-bottom: 12px;
+    }
+
+
+    .safety-card ul {
+
+        padding-left: 22px;
+
+        line-height: 1.8;
+
+        color: #444;
+    }
+
+
+    .safety-card li {
+
+        margin-bottom: 7px;
+    }
+
+
+    /* BEFORE DISASTER */
+
+    .before {
+
+        width: 85%;
+        max-width: 1000px;
+
+        margin: 0 auto 40px;
+
+        background-color: #182b3a;
+
+        color: white;
+
+        padding: 40px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .before h2 {
+
+        font-size: 28px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .before p {
+
+        line-height: 1.7;
+
+        color: #ddd;
+
+        margin-bottom: 15px;
+    }
+
+
+    .before ul {
+
+        padding-left: 25px;
+
+        line-height: 1.9;
+    }
+
+
+    /* EMERGENCY CHECKLIST */
+
+    .checklist {
+
+        width: 85%;
+        max-width: 1000px;
+
+        margin: 0 auto 50px;
+
+        background-color: white;
+
+        padding: 35px;
+
+        border-radius: 12px;
+
+        box-shadow: 0 4px 12px #ccc;
+    }
+
+
+    .checklist h2 {
+
+        color: #182b3a;
+
+        margin-bottom: 20px;
+    }
+
+
+    .checklist-item {
+
+        padding: 15px;
+
+        border-bottom: 1px solid #ddd;
+
+        line-height: 1.6;
+    }
+
+
+    .checklist-item:last-child {
+
+        border-bottom: none;
+    }
+
+
+    /* EMERGENCY NOTICE */
+
+    .notice {
+
+        width: 85%;
+        max-width: 1000px;
+
+        margin: 0 auto 50px;
+
+        background-color: #d62828;
+
+        color: white;
+
+        padding: 30px;
+
+        border-radius: 12px;
+
+        text-align: center;
+    }
+
+
+    .notice h2 {
+
+        margin-bottom: 12px;
+
+        font-size: 27px;
+    }
+
+
+    .notice p {
+
+        line-height: 1.7;
+
+        font-size: 16px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        background-color: #101e29;
+
+        color: white;
+
+        text-align: center;
+
+        padding: 25px;
+    }
+
+
+    footer h3 {
+
+        margin-bottom: 8px;
+    }
+
+
+    .copyright {
+
+        font-size: small;
+
+        margin-top: 8px;
+
+        color: #ccc;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+        header {
+
+            padding: 15px 20px;
+        }
+
+
+        .logo {
+
+            font-size: 18px;
+        }
+
+
+        .hero h1 {
+
+            font-size: 32px;
+        }
+
+
+        .safety-container {
+
+            grid-template-columns: 1fr;
+        }
+
+
+        .intro,
+        .before,
+        .checklist,
+        .notice {
+
+            width: 92%;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+
+        🚨 DISASTER ALERT
+
+    </div>
+
+
+    <a href="index.html" class="home">
+
+        🏠 Home
+
+    </a>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>🚨 Emergency Safety Tips</h1>
+
+    <p>
+
+        Learn how to protect yourself, your family and your
+        community before, during and after a disaster.
+
+    </p>
+
+</section>
+
+
+
+<!-- INTRODUCTION -->
+
+<section class="intro">
+
+    <h2>Be Prepared. Stay Safe.</h2>
+
+    <p>
+
+        Disasters can happen with little warning. Knowing what
+        to do before an emergency occurs can help reduce risks
+        and protect lives. Follow reliable instructions from
+        emergency authorities and always prioritize your safety.
+
+    </p>
+
+</section>
+
+
+
+<!-- SAFETY CARDS -->
+
+<section class="safety-container">
+
+
+    <!-- EARTHQUAKE -->
+
+    <div class="safety-card">
+
+        <div class="safety-icon">
+
+            🌍
+
+        </div>
+
+        <h2>Earthquake Safety</h2>
+
+        <p>
+
+            During an earthquake, protect yourself from falling
+            objects and remain calm.
+
+        </p>
+
+        <ul>
+
+            <li>Drop, cover and hold on.</li>
+
+            <li>Stay away from windows and glass.</li>
+
+            <li>Move away from objects that may fall.</li>
+
+            <li>If outdoors, stay away from buildings and power lines.</li>
+
+            <li>Be prepared for possible aftershocks.</li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- FLOOD -->
+
+    <div class="safety-card">
+
+        <div class="safety-icon">
+
+            🌊
+
+        </div>
+
+        <h2>Flood Safety</h2>
+
+        <p>
+
+            Floodwater can be dangerous and may hide hazards
+            such as debris and damaged roads.
+
+        </p>
+
+        <ul>
+
+            <li>Move to higher ground when advised.</li>
+
+            <li>Never walk or drive through floodwater.</li>
+
+            <li>Stay informed about flood warnings.</li>
+
+            <li>Keep drinking water and food supplies ready.</li>
+
+            <li>Follow evacuation instructions from authorities.</li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- FIRE -->
+
+    <div class="safety-card">
+
+        <div class="safety-icon">
+
+            🔥
+
+        </div>
+
+        <h2>Fire Safety</h2>
+
+        <p>
+
+            Fires can spread quickly. Leave dangerous areas
+            immediately and follow emergency instructions.
+
+        </p>
+
+        <ul>
+
+            <li>Alert people nearby when a fire is detected.</li>
+
+            <li>Leave using the safest available exit.</li>
+
+            <li>Never use an elevator during a building fire.</li>
+
+            <li>Stay low if there is smoke.</li>
+
+            <li>Never return to a burning building.</li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- CYCLONE -->
+
+    <div class="safety-card">
+
+        <div class="safety-icon">
+
+            🌀
+
+        </div>
+
+        <h2>Cyclone Safety</h2>
+
+        <p>
+
+            Strong winds and heavy rainfall during cyclones can
+            damage buildings and infrastructure.
+
+        </p>
+
+        <ul>
+
+            <li>Monitor official weather warnings.</li>
+
+            <li>Stay indoors in a secure location.</li>
+
+            <li>Keep emergency supplies ready.</li>
+
+            <li>Stay away from windows.</li>
+
+            <li>Evacuate if instructed by authorities.</li>
+
+        </ul>
+
+    </div>
+
+
+
+</section>
+
+
+
+<!-- BEFORE DISASTER -->
+
+<section class="before">
+
+    <h2>🎒 What To Do Before a Disaster</h2>
+
+    <p>
+
+        Preparation is one of the most important ways to reduce
+        the impact of a disaster.
+
+    </p>
+
+    <ul>
+
+        <li>Prepare an emergency kit.</li>
+
+        <li>Store drinking water and non-perishable food.</li>
+
+        <li>Keep a flashlight and spare batteries.</li>
+
+        <li>Keep important documents protected.</li>
+
+        <li>Save emergency contact numbers.</li>
+
+        <li>Know the safest evacuation routes in your area.</li>
+
+        <li>Discuss an emergency plan with your family.</li>
+
+    </ul>
+
+</section>
+
+
+
+<!-- EMERGENCY CHECKLIST -->
+
+<section class="checklist">
+
+    <h2>✅ Emergency Checklist</h2>
+
+
+    <div class="checklist-item">
+
+        💧 Drinking water
+
+    </div>
+
+
+    <div class="checklist-item">
+
+        🥫 Non-perishable food
+
+    </div>
+
+
+    <div class="checklist-item">
+
+        🩹 First-aid supplies
+
+    </div>
+
+
+    <div class="checklist-item">
+
+        🔦 Flashlight and batteries
+
+    </div>
+
+
+    <div class="checklist-item">
+
+        📻 Battery-powered radio
+
+    </div>
+
+
+    <div class="checklist-item">
+
+        🔋 Power bank
+
+    </div>
+
+
+    <div class="checklist-item">
+
+        📄 Important documents
+
+    </div>
+
+
+    <div class="checklist-item">
+
+        📱 Emergency contact information
+
+    </div>
+
+
+    <div class="checklist-item">
+
+        📢 Whistle
+
+    </div>
+
+</section>
+
+
+
+<!-- EMERGENCY NOTICE -->
+
+<section class="notice">
+
+    <h2>🚨 During an Emergency</h2>
+
+    <p>
+
+        Stay calm, move away from immediate danger, and follow
+        instructions from emergency services and local authorities.
+        Do not spread unverified information or put yourself at
+        additional risk while trying to help others.
+
+    </p>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+
+        Disaster Management System
+
+    </h3>
+
+
+    <p>
+
+        Stay informed and stay safe.
+
+    </p>
+
+
+    <p class="copyright">
+
+        © 2026 Disaster Management System
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

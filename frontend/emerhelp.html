@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency Help - Disaster Management System</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+
+        /* Header */
+
+        header {
+            background-color: #182b3a;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .home {
+            color: white;
+            text-decoration: none;
+            background-color: #d62828;
+            padding: 10px 18px;
+            border-radius: 5px;
+        }
+
+
+        /* Page Heading */
+
+        .heading {
+            text-align: center;
+            padding: 35px 20px 20px;
+        }
+
+        .heading h1 {
+            color: #182b3a;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .heading p {
+            font-size: 17px;
+        }
+
+
+        /* Emergency Cards */
+
+        .emergency-container {
+            width: 90%;
+            margin: 20px auto 40px;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .emergency-card {
+            background-color: white;
+            width: 45%;
+            padding: 25px;
+            border-radius: 10px;
+
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        .emergency-card h2 {
+            color: #d62828;
+            margin-bottom: 15px;
+        }
+
+        .emergency-card h3 {
+            color: #182b3a;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        .emergency-card ul {
+            padding-left: 20px;
+        }
+
+        .emergency-card li {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+
+        /* Important Contacts */
+
+        .contacts {
+            background-color: #182b3a;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .contacts h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact {
+            background-color: white;
+            color: #333;
+            padding: 18px 25px;
+            border-radius: 8px;
+            min-width: 180px;
+        }
+
+        .contact h3 {
+            color: #d62828;
+            margin-bottom: 8px;
+        }
+
+        .contact a {
+            color: #182b3a;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+
+        /* Footer */
+
+        footer {
+            background-color: #101e29;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .copyright {
+            font-size: small;
+            margin-top: 8px;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .emergency-card {
+                width: 100%;
+            }
+
+            header {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="logo">
+            🚨 DISASTER ALERT
+        </div>
+
+        <a href="index.html" class="home">
+            🏠 Home
+        </a>
+
+    </header>
+
+
+    <!-- Page Heading -->
+
+    <section class="heading">
+
+        <h1>🚨 Emergency Help & Safety Guide</h1>
+
+        <p>
+            Stay calm, stay informed and follow the appropriate safety measures
+            during an emergency.
+        </p>
+
+    </section>
+
+
+    <!-- Emergency Cards -->
+
+    <section class="emergency-container">
+
+
+        <!-- Flood -->
+
+        <div class="emergency-card">
+
+            <h2>🌊 Flood</h2>
+
+            <h3>What to do:</h3>
+
+            <ul>
+                <li>Move to higher ground immediately.</li>
+                <li>Listen to official emergency instructions.</li>
+                <li>Keep important documents and emergency supplies with you.</li>
+                <li>Switch off electricity if it is safe to do so.</li>
+                <li>Avoid walking or driving through flood water.</li>
+            </ul>
+
+            <h3>Remember:</h3>
+
+            <p>
+                Do not enter moving flood water. It may be deeper and stronger
+                than it appears.
+            </p>
+
+        </div>
+
+
+        <!-- Fire -->
+
+        <div class="emergency-card">
+
+            <h2>🔥 Fire</h2>
+
+            <h3>What to do:</h3>
+
+            <ul>
+                <li>Stay calm and leave the building immediately.</li>
+                <li>Use stairs instead of elevators.</li>
+                <li>Stay low if there is smoke.</li>
+                <li>Never go back inside a burning building.</li>
+                <li>Call the fire service as soon as possible.</li>
+            </ul>
+
+            <h3>Remember:</h3>
+
+            <p>
+                If your clothes catch fire, remember:
+                <strong>Stop, Drop and Roll.</strong>
+            </p>
+
+        </div>
+
+
+        <!-- Earthquake -->
+
+        <div class="emergency-card">
+
+            <h2>🌍 Earthquake</h2>
+
+            <h3>What to do:</h3>
+
+            <ul>
+                <li>Drop to the ground.</li>
+                <li>Take cover under a strong table or desk.</li>
+                <li>Hold on until the shaking stops.</li>
+                <li>Stay away from windows and heavy objects.</li>
+                <li>After the shaking stops, move carefully to a safe area.</li>
+            </ul>
+
+            <h3>Remember:</h3>
+
+            <p>
+                Do not use elevators during or immediately after an earthquake.
+            </p>
+
+        </div>
+
+
+        <!-- Cyclone -->
+
+        <div class="emergency-card">
+
+            <h2>🌀 Cyclone</h2>
+
+            <h3>What to do:</h3>
+
+            <ul>
+                <li>Stay indoors and away from windows.</li>
+                <li>Secure doors and windows.</li>
+                <li>Keep an emergency kit ready.</li>
+                <li>Follow official weather and evacuation warnings.</li>
+                <li>Do not go outside during the storm.</li>
+            </ul>
+
+            <h3>Remember:</h3>
+
+            <p>
+                Keep your phone charged and stay updated through official
+                emergency announcements.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- Emergency Contacts -->
+
+    <section class="contacts">
+
+        <h2>📞 Important Emergency Contacts</h2>
+
+        <div class="contact-container">
+
+
+            <div class="contact">
+
+                <h3>🚨 Emergency</h3>
+
+                <a href="tel:112">112</a>
+
+            </div>
+
+
+            <div class="contact">
+
+                <h3>🚒 Fire</h3>
+
+                <a href="tel:101">101</a>
+
+            </div>
+
+
+            <div class="contact">
+
+                <h3>🚑 Ambulance</h3>
+
+                <a href="tel:108">108</a>
+
+            </div>
+
+
+            <div class="contact">
+
+                <h3>👮 Police</h3>
+
+                <a href="tel:100">100</a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>Disaster Management System</h3>
+
+        <p>
+            Stay informed and stay safe.
+        </p>
+
+        <p class="copyright">
+            © 2026 Disaster Management System
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

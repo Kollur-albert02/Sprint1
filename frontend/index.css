@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: #182b3a;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 7%;
+}
+
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+
+/* HERO */
+
+.hero {
+    background-color: #243b53;
+    color: white;
+
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+.location {
+    font-size: 15px;
+}
+
+
+/* COMMON SECTION */
+
+section {
+    width: 85%;
+    margin: 40px auto;
+}
+
+
+section h2 {
+    margin-bottom: 20px;
+    color: #243b53;
+}
+
+
+/* CURRENT SITUATION */
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+
+.card {
+    background-color: white;
+
+    flex: 1;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+
+.card .icon {
+    font-size: 30px;
+}
+
+
+.card h3 {
+    margin: 10px 0;
+}
+
+
+/* ALERTS */
+
+.alerts {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+}
+
+
+.alert-card {
+    border-left: 5px solid #e63946;
+
+    background-color: #fff5f5;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    border-radius: 5px;
+}
+
+
+.alert-card h3 {
+    color: #c1121f;
+
+    margin-bottom: 8px;
+}
+
+
+.alert-card p {
+    margin: 5px 0;
+}
+
+
+/* EARTHQUAKES */
+
+.earthquakes {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+}
+
+
+.earthquake-card {
+    padding: 15px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.earthquake-card:last-child {
+    border-bottom: none;
+}
+
+
+/* EMERGENCY */
+
+.emergency {
+    text-align: center;
+}
+
+
+.emergency-cards {
+    display: flex;
+    gap: 20px;
+}
+
+
+.emergency-cards div {
+    background-color: white;
+
+    flex: 1;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #182b3a;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    margin-top: 50px;
+}
+
+
+.footer-links {
+    margin: 20px 0;
+}
+
+
+.footer-links a {
+    color: white;
+
+    text-decoration: none;
+
+    margin: 0 10px;
+}
+
+
+.footer-links a:hover {
+    color: #ffcc00;
+}
+
+
+.copyright {
+    font-size: 13px;
+    color: #bbb;
+}

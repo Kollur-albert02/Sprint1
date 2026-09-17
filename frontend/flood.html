@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Flood Stories | Disaster Management System</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f5f7f9;
+        color: #333;
+    }
+
+    /* HEADER */
+
+    header {
+        background-color: #182b3a;
+        color: white;
+        padding: 20px 6%;
+    }
+
+    .logo {
+        font-size: 23px;
+        font-weight: bold;
+    }
+
+    /* HERO */
+
+    .hero {
+        height: 400px;
+
+        background-image:
+            linear-gradient(rgba(24, 43, 58, 0.65),
+                            rgba(24, 43, 58, 0.65)),
+            url("disaster2.jpg");
+
+        background-size: cover;
+        background-position: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+        color: white;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 19px;
+        max-width: 750px;
+        line-height: 1.6;
+    }
+
+    /* MAIN CONTENT */
+
+    .container {
+        width: 85%;
+        max-width: 1100px;
+        margin: 50px auto;
+    }
+
+    .story {
+        background-color: white;
+        padding: 40px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .story h2 {
+        color: #182b3a;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .story p {
+        font-size: 17px;
+        line-height: 1.8;
+        margin-bottom: 18px;
+        text-align: justify;
+    }
+
+    /* STORY IMAGE */
+
+    .story-image {
+        width: 100%;
+        max-height: 450px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 10px 0 25px;
+    }
+
+    /* INFORMATION CARDS */
+
+    .info-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .info-card {
+        background-color: white;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .info-card h3 {
+        color: #182b3a;
+        margin-bottom: 12px;
+        font-size: 21px;
+    }
+
+    .info-card p {
+        line-height: 1.6;
+        color: #555;
+    }
+
+    /* SAFETY */
+
+    .safety {
+        background-color: #182b3a;
+        color: white;
+        padding: 40px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+    }
+
+    .safety h2 {
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+
+    .safety ul {
+        padding-left: 25px;
+    }
+
+    .safety li {
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+
+    /* BACK BUTTON */
+
+    .back {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .back a {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #182b3a;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .back a:hover {
+        background-color: #29465c;
+    }
+
+    /* FOOTER */
+
+    footer {
+        background-color: #182b3a;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 50px;
+    }
+
+    footer h3 {
+        margin-bottom: 10px;
+    }
+
+    .copyright {
+        font-size: 13px;
+        color: #ccc;
+        margin-top: 15px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+        .hero {
+            height: 350px;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+        }
+
+        .hero p {
+            font-size: 16px;
+        }
+
+        .container {
+            width: 92%;
+        }
+
+        .story {
+            padding: 25px;
+        }
+
+        .info-section {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        🚨 DISASTER ALERT
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>Flood Stories</h1>
+
+    <p>
+        Understanding the impact of floods and the importance
+        of preparedness, response and community support.
+    </p>
+
+</section>
+
+
+<!-- MAIN CONTENT -->
+
+<main class="container">
+
+
+    <!-- STORY -->
+
+    <section class="story">
+
+        <h2>Understanding Floods</h2>
+
+        <img
+            src="disaster2.jpg"
+            alt="Flood disaster"
+            class="story-image"
+        >
+
+        <p>
+            Floods are among the most common natural disasters
+            around the world. They occur when water overflows
+            onto land that is normally dry. Heavy rainfall,
+            overflowing rivers, storms, cyclones and poor drainage
+            can all contribute to flooding.
+        </p>
+
+        <p>
+            Floods can affect entire communities within a short
+            period of time. Homes and roads may be damaged,
+            electricity and communication systems may be disrupted,
+            and people may be forced to leave their homes.
+        </p>
+
+        <p>
+            The effects of a flood can continue long after the
+            water has receded. Communities may need clean drinking
+            water, food, medical assistance and temporary shelter
+            while they begin the process of recovery.
+        </p>
+
+    </section>
+
+
+    <!-- IMPACT -->
+
+    <section class="story">
+
+        <h2>Impact of Floods</h2>
+
+        <div class="info-section">
+
+            <div class="info-card">
+
+                <h3>🏠 Homes</h3>
+
+                <p>
+                    Floodwater can damage houses, furniture,
+                    electrical systems and other belongings.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>🛣️ Infrastructure</h3>
+
+                <p>
+                    Roads, bridges, transport systems and
+                    communication networks can be disrupted.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>🌾 Communities</h3>
+
+                <p>
+                    Flooding can affect food supplies, clean
+                    water and the livelihoods of local communities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMMUNITY STORY -->
+
+    <section class="story">
+
+        <h2>Community Response</h2>
+
+        <p>
+            During a flood, community cooperation can play an
+            important role in protecting lives. Volunteers,
+            emergency services and local organizations can work
+            together to help people move to safer locations.
+        </p>
+
+        <p>
+            Relief efforts may include providing food, drinking
+            water, temporary shelter, clothing and basic medical
+            assistance. Communication is also important because
+            people need reliable information about evacuation
+            routes and safe locations.
+        </p>
+
+        <p>
+            The experience of communities affected by floods
+            highlights an important lesson: preparation before
+            a disaster can significantly reduce its impact.
+        </p>
+
+    </section>
+
+
+    <!-- SAFETY -->
+
+    <section class="safety">
+
+        <h2>Flood Safety Tips</h2>
+
+        <ul>
+
+            <li>
+                Stay informed about weather and flood warnings.
+            </li>
+
+            <li>
+                Move to higher ground if authorities advise
+                evacuation.
+            </li>
+
+            <li>
+                Avoid walking or driving through floodwater.
+            </li>
+
+            <li>
+                Keep drinking water, food, medicines and
+                important documents in a safe place.
+            </li>
+
+            <li>
+                Keep an emergency kit ready.
+            </li>
+
+            <li>
+                Follow instructions from emergency services
+                and local authorities.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- BACK -->
+
+    <div class="back">
+
+        <a href="about.html">
+            ← Back to About Us
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>Disaster Management System</h3>
+
+    <p>
+        Stay informed and stay safe.
+    </p>
+
+    <p class="copyright">
+        © 2026 Disaster Management System
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

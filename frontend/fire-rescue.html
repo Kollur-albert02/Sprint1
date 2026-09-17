@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Fire Rescue Operation | Disaster Management System</title>
+
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f6f8;
+        color: #333;
+    }
+
+
+    /* HEADER */
+
+    header {
+        background-color: #182b3a;
+        color: white;
+
+        padding: 18px 40px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+
+    .home {
+        color: white;
+        text-decoration: none;
+
+        background-color: #d62828;
+
+        padding: 10px 18px;
+
+        border-radius: 20px;
+
+        transition: 0.3s;
+    }
+
+
+    .home:hover {
+        background-color: #a91e1e;
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height: 450px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 60px 20px;
+
+        background-image:
+            linear-gradient(
+                rgba(24, 43, 58, 0.70),
+                rgba(24, 43, 58, 0.70)
+            ),
+            url("fire.webp");
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+
+    .hero-content {
+
+        max-width: 850px;
+
+        color: white;
+    }
+
+
+    .hero-icon {
+
+        font-size: 60px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 45px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .hero .date {
+
+        color: #ffdddd;
+
+        font-weight: bold;
+
+        letter-spacing: 1px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .hero p {
+
+        font-size: 18px;
+
+        line-height: 1.7;
+
+        color: #eeeeee;
+    }
+
+
+    /* STORY */
+
+    .story {
+
+        width: 85%;
+
+        max-width: 1000px;
+
+        margin: 50px auto;
+    }
+
+
+    .story-section {
+
+        background-color: white;
+
+        padding: 35px;
+
+        margin-bottom: 25px;
+
+        border-radius: 15px;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+        border-left: 5px solid #d62828;
+    }
+
+
+    .story-section h2 {
+
+        color: #182b3a;
+
+        margin-bottom: 15px;
+
+        font-size: 25px;
+    }
+
+
+    .story-section p {
+
+        line-height: 1.8;
+
+        color: #444;
+
+        font-size: 16px;
+    }
+
+
+    /* HIGHLIGHTS */
+
+    .highlights {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 20px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .highlight {
+
+        background-color: #182b3a;
+
+        color: white;
+
+        padding: 25px;
+
+        text-align: center;
+
+        border-radius: 12px;
+    }
+
+
+    .highlight-icon {
+
+        font-size: 35px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .highlight h3 {
+
+        margin-bottom: 8px;
+    }
+
+
+    .highlight p {
+
+        color: #ddd;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+
+    /* CHALLENGES */
+
+    .challenges {
+
+        background-color: #eef2f5;
+
+        padding: 30px;
+
+        border-radius: 12px;
+
+        margin-top: 15px;
+    }
+
+
+    .challenges ul {
+
+        padding-left: 25px;
+
+        line-height: 2;
+    }
+
+
+    /* SAFETY */
+
+    .safety {
+
+        background-color: #182b3a;
+
+        color: white;
+
+        padding: 40px;
+
+        text-align: center;
+
+        margin-top: 30px;
+
+        border-radius: 15px;
+    }
+
+
+    .safety h2 {
+
+        margin-bottom: 15px;
+    }
+
+
+    .safety p {
+
+        color: #ddd;
+
+        line-height: 1.7;
+
+        margin-bottom: 20px;
+    }
+
+
+    .safety-button {
+
+        display: inline-block;
+
+        background-color: #d62828;
+
+        color: white;
+
+        text-decoration: none;
+
+        padding: 12px 22px;
+
+        border-radius: 25px;
+
+        font-weight: bold;
+    }
+
+
+    .safety-button:hover {
+
+        background-color: #a91e1e;
+    }
+
+
+    /* BACK BUTTON */
+
+    .back {
+
+        text-align: center;
+
+        margin: 40px 0 60px;
+    }
+
+
+    .back a {
+
+        display: inline-block;
+
+        color: #182b3a;
+
+        border: 2px solid #182b3a;
+
+        text-decoration: none;
+
+        padding: 11px 22px;
+
+        border-radius: 25px;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+    }
+
+
+    .back a:hover {
+
+        background-color: #182b3a;
+
+        color: white;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        background-color: #101e29;
+
+        color: white;
+
+        text-align: center;
+
+        padding: 25px;
+    }
+
+
+    footer p {
+
+        margin-top: 8px;
+    }
+
+
+    .copyright {
+
+        font-size: small;
+
+        color: #ccc;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+        header {
+
+            padding: 15px 20px;
+        }
+
+
+        .logo {
+
+            font-size: 18px;
+        }
+
+
+        .hero {
+
+            min-height: 400px;
+        }
+
+
+        .hero h1 {
+
+            font-size: 32px;
+        }
+
+
+        .hero p {
+
+            font-size: 16px;
+        }
+
+
+        .story {
+
+            width: 90%;
+        }
+
+
+        .story-section {
+
+            padding: 25px;
+        }
+
+
+        .highlights {
+
+            grid-template-columns: 1fr;
+        }
+
+
+        .safety {
+
+            padding: 30px 20px;
+        }
+
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+
+        🚨 DISASTER ALERT
+
+    </div>
+
+
+    <a href="index.html" class="home">
+
+        🏠 Home
+
+    </a>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-icon">
+
+            🔥
+
+        </div>
+
+
+        <div class="date">
+
+            JULY 2026
+
+        </div>
+
+
+        <h1>
+
+            Fire Rescue Operation
+
+        </h1>
+
+
+        <p>
+
+            A community response focused on helping residents
+            move away from a fire-affected area while emergency
+            services worked to control the situation.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- STORY -->
+
+<main class="story">
+
+
+    <!-- WHAT HAPPENED -->
+
+    <section class="story-section">
+
+        <h2>
+
+            🔥 What Happened?
+
+        </h2>
+
+
+        <p>
+
+            A fire broke out in a residential area, creating
+            a dangerous situation for nearby residents.
+            Smoke and flames made it difficult for people
+            to safely remain inside the affected area.
+
+            <br><br>
+
+            As the situation developed, residents were encouraged
+            to move away from the affected location and avoid
+            entering areas where smoke or fire was present.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- HIGHLIGHTS -->
+
+    <section class="highlights">
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+
+                🚨
+
+            </div>
+
+            <h3>
+
+                Emergency Alert
+
+            </h3>
+
+            <p>
+
+                Residents were informed about the emergency
+                and encouraged to move to safer locations.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+
+                👨‍🚒
+
+            </div>
+
+            <h3>
+
+                Emergency Services
+
+            </h3>
+
+            <p>
+
+                Emergency services were contacted to
+                respond to and control the fire.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+
+                🏠
+
+            </div>
+
+            <h3>
+
+                Safe Evacuation
+
+            </h3>
+
+            <p>
+
+                Residents were guided away from the
+                affected area to reduce further risk.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- RESPONSE -->
+
+    <section class="story-section">
+
+        <h2>
+
+            🚒 Rescue Response
+
+        </h2>
+
+
+        <p>
+
+            The first priority during the incident was to
+            ensure that residents moved away from the
+            immediate danger zone. Emergency services were
+            contacted and provided with information about
+            the location of the fire.
+
+            <br><br>
+
+            Volunteers focused on assisting residents who
+            needed help leaving the area and encouraged
+            everyone to follow instructions from emergency
+            personnel.
+
+            <br><br>
+
+            Once emergency responders arrived, the situation
+            was handed over to the appropriate emergency
+            authorities. Volunteers continued supporting the
+            affected community where it was safe to do so.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- CHALLENGES -->
+
+    <section class="story-section">
+
+        <h2>
+
+            ⚠️ Challenges Faced
+
+        </h2>
+
+
+        <p>
+
+            Fires can spread quickly and produce smoke that
+            can make breathing difficult and reduce visibility.
+            This makes it important for people to leave the
+            affected area quickly and avoid attempting to
+            handle the fire themselves.
+
+            <br><br>
+
+            Another challenge is maintaining clear communication
+            during an emergency. People may become confused or
+            frightened, which makes organized evacuation and
+            cooperation with emergency personnel especially
+            important.
+
+        </p>
+
+
+        <div class="challenges">
+
+            <ul>
+
+                <li>
+                    Rapidly changing fire conditions
+                </li>
+
+                <li>
+                    Heavy smoke and reduced visibility
+                </li>
+
+                <li>
+                    Safe evacuation of residents
+                </li>
+
+                <li>
+                    Maintaining clear communication
+                </li>
+
+                <li>
+                    Keeping people away from dangerous areas
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- COMMUNITY SUPPORT -->
+
+    <section class="story-section">
+
+        <h2>
+
+            🤝 Community Support
+
+        </h2>
+
+
+        <p>
+
+            Community members helped by sharing information
+            and assisting vulnerable residents in reaching
+            safer locations.
+
+            <br><br>
+
+            Volunteers also helped communicate important
+            instructions and supported affected families
+            after they had moved away from the danger zone.
+
+            <br><br>
+
+            The incident demonstrated the importance of
+            cooperation between residents, volunteers and
+            professional emergency services during a fire.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- LESSONS -->
+
+    <section class="story-section">
+
+        <h2>
+
+            📚 Lessons Learned
+
+        </h2>
+
+
+        <div class="challenges">
+
+            <ul>
+
+                <li>
+                    Know the emergency exits in your home or workplace.
+                </li>
+
+                <li>
+                    Never ignore a fire alarm or emergency warning.
+                </li>
+
+                <li>
+                    Stay low if there is heavy smoke.
+                </li>
+
+                <li>
+                    Never use elevators during a building fire.
+                </li>
+
+                <li>
+                    Do not return to a burning building.
+                </li>
+
+                <li>
+                    Contact the appropriate emergency services.
+                </li>
+
+                <li>
+                    Keep a fire extinguisher and basic emergency supplies accessible.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SAFETY -->
+
+    <section class="safety">
+
+        <h2>
+
+            🔥 Fire Safety
+
+        </h2>
+
+
+        <p>
+
+            Being prepared can help reduce the risk during
+            a fire emergency. Know your evacuation routes,
+            keep emergency exits clear and make sure everyone
+            in your household knows what to do if a fire
+            occurs.
+
+        </p>
+
+
+        <a href="emerghelp.html"
+           class="safety-button">
+
+            View Safety Tips →
+
+        </a>
+
+    </section>
+
+
+
+    <!-- BACK -->
+
+    <div class="back">
+
+        <a href="news.html">
+
+            ← Back to Rescue Stories
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+
+        Disaster Management System
+
+    </h3>
+
+
+    <p>
+
+        Stay informed and stay safe.
+
+    </p>
+
+
+    <p class="copyright">
+
+        © 2026 Disaster Management System
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
