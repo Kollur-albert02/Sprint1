@@ -1,4 +1,4 @@
-import { API_URL } from "../config";
+import { API_URL } from "./config";
 import "./SignIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
