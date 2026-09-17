@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
-import SignIn from "./pages/SignIn";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
-import AdminDashboard from "./pages/Admindashboard";
-import AdminLogin from "./pages/AdminLogin";
+import SignIn from "./SignIn";
+import Register from "./Register";
+import Dashboard from "./Dashboard";
+import AdminDashboard from "./Admindashboard";
+import AdminLogin from "./AdminLogin";
 
 
 // ======================================================
