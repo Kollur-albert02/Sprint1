@@ -154,7 +154,7 @@
             🚨 DISASTER ALERT
         </div>
 
-        <a href="http://localhost:5173/" class="register">
+        <a href="#" class="register">
             📝 SignIn
         </a>
 
@@ -252,7 +252,13 @@
         </p>
 
     </footer>
-
+<script>
+    const signInBtn = document.getElementById('signInBtn');
+    const isLocal = window.location.hostname === 'localhost';
+    signInBtn.href = isLocal
+        ? 'http://localhost:5173/'
+        : 'https://disasterresponse-golo.onrender.com/';
+</script>
 
 </body>
 
