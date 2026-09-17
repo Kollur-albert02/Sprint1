@@ -1,3 +1,4 @@
+import { API_URL, APP_URL } from "../config";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
@@ -39,7 +40,7 @@ function Dashboard() {
             setLoadingRequests(true);
 
             const response = await axios.get(
-                `http://localhost:5000/api/emergency/user/${userId}`
+                `${API_URL}/api/emergency/user/${userId}`
             );
 
             setEmergencyRequests(response.data);
@@ -180,7 +181,7 @@ function Dashboard() {
         try {
 
             const response = await axios.post(
-                "http://localhost:5000/api/emergency",
+               `${API_URL}/api/emergency`,
                 {
                     user_id: userId,
 
@@ -869,7 +870,7 @@ function Dashboard() {
     <div className="info-cards">
 
         <a
-            href="http://localhost:5500/"
+            href={`${APP_URL}/`}
             className="info-card"
         >
            <span className="info-icon">
@@ -886,7 +887,7 @@ function Dashboard() {
             </p> 
         </a>
           <a
-            href="http://localhost:5500/alerts.html"
+            href={`${APP_URL}/alerts.html`}
             className="info-card"
         >
             <span className="info-icon">
@@ -922,7 +923,7 @@ function Dashboard() {
                 <div className="info-cards">
 
                       <a
-            href="http://localhost:5500/news.html"
+            href={`${APP_URL}/news.html`}
             className="info-card"
         >
             <span className="info-icon">
@@ -958,7 +959,7 @@ function Dashboard() {
     <div className="resource-cards">
 
         <a
-            href="http://localhost:5500/resources.html"
+            href={`${APP_URL}/resources.html`}
             className="info-card"
         >
             <span className="info-icon">
@@ -977,7 +978,7 @@ function Dashboard() {
 
 
         <a
-            href="http://localhost:5500/emercontact.html"
+            href={`${APP_URL}/emercontact.html`}
             className="info-card"
         >
             <span className="info-icon">
