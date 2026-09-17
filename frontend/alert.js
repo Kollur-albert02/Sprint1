@@ -1,308 +1,204 @@
-async function getWeather() {
-
+async function getWeather(latitude, longitude) {
     try {
+        const response = await fetch(
+            `/api/weather?latitude=${latitude}&longitude=${longitude}`
+        );
 
-        const response =
-            await fetch("/api/weather");
+        if (!response.ok) {
+            throw new Error("Weather API request failed");
+        }
 
-        const data =
-            await response.json();
+        const data = await response.json();
 
+        console.log("Weather data:", data);
 
-        /* CURRENT WEATHER */
-
-        const current =
-            data.current;
-
+        const current = data.current;
 
         document.getElementById("temperature").textContent =
-            current.temperature_2m + "°C";
-
+            `${current.temperature_2m} °C`;
 
         document.getElementById("wind").textContent =
-            current.wind_speed_10m;
-
+            `💨 Wind: ${current.wind_speed_10m} km/h`;
 
         document.getElementById("weather").textContent =
             getWeatherDescription(current.weather_code);
 
-
-        /* LOCATION */
-
-        getLocation();
-
-
-        /* WARNING */
-
         createWarning(current);
-
-
-        /* FORECAST */
-
         createForecast(data.daily);
 
+    } catch (error) {
+        console.error("Weather error:", error);
 
-    }
-
-    catch (error) {
-
-        console.log(error);
+        document.getElementById("temperature").textContent =
+            "Weather unavailable";
 
         document.getElementById("weather").textContent =
             "Unable to load weather information.";
 
+        document.getElementById("wind").textContent =
+            "💨 Wind: Unavailable";
     }
-
 }
 
-
-/* GET CURRENT LOCATION */
 
 function getLocation() {
 
-    const locationElement =
-        document.getElementById("location");
-
-
     if (!navigator.geolocation) {
-
-        locationElement.textContent =
-            "📍 Location unavailable";
-
+        console.log("Geolocation not supported. Using Mumbai.");
+        useDefaultLocation();
         return;
-
     }
 
-
     navigator.geolocation.getCurrentPosition(
-
         async function (position) {
 
-            const latitude =
-                position.coords.latitude;
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
 
-            const longitude =
-                position.coords.longitude;
+            console.log("Location detected:", latitude, longitude);
 
+            // Show coordinates immediately
+            document.getElementById("location").textContent =
+                `Location: ${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
 
+            // Get weather using detected coordinates
+            await getWeather(latitude, longitude);
+
+            // Try reverse geocoding separately
             try {
+                const response = await fetch(
+                    `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+                );
 
-                /*
-                 * Reverse geocoding converts
-                 * latitude and longitude
-                 * into a readable location.
-                 */
+                const data = await response.json();
 
-                const response =
-                    await fetch(
-                        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
-                    );
+                if (data.address) {
 
+                    const city =
+                        data.address.city ||
+                        data.address.town ||
+                        data.address.village ||
+                        data.address.suburb ||
+                        "Your Location";
 
-                const data =
-                    await response.json();
+                    const state =
+                        data.address.state || "";
 
+                    document.getElementById("location").textContent =
+                        `${city}${state ? ", " + state : ""}`;
+                }
 
-                const address =
-                    data.address;
-
-
-                const city =
-                    address.city ||
-                    address.town ||
-                    address.village ||
-                    address.suburb ||
-                    "Unknown location";
-
-
-                const state =
-                    address.state ||
-                    "";
-
-
-                locationElement.textContent =
-                    `📍 ${city}${state ? ", " + state : ""}`;
-
-
+            } catch (error) {
+                console.log("Location name lookup failed:", error);
             }
-
-            catch (error) {
-
-                console.log(error);
-
-                locationElement.textContent =
-                    `📍 ${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
-
-            }
-
         },
-
 
         function (error) {
 
-            console.log(error);
+            console.log("Geolocation failed:", error.message);
 
-            locationElement.textContent =
-                "📍 Location permission denied";
-
+            // If browser location is unavailable,
+            // use Mumbai as fallback
+            useDefaultLocation();
         }
-
     );
-
 }
 
 
-/* WEATHER DESCRIPTION */
+function useDefaultLocation() {
+
+    const latitude = 19.0760;
+    const longitude = 72.8777;
+
+    document.getElementById("location").textContent =
+        "Mumbai, Maharashtra";
+
+    getWeather(latitude, longitude);
+}
+
 
 function getWeatherDescription(code) {
 
-    if (code === 0) {
-        return "☀️ Clear sky";
-    }
+    const descriptions = {
+        0: "Clear sky",
+        1: "Mainly clear",
+        2: "Partly cloudy",
+        3: "Overcast",
+        45: "Fog",
+        48: "Depositing rime fog",
+        51: "Light drizzle",
+        53: "Moderate drizzle",
+        55: "Dense drizzle",
+        61: "Slight rain",
+        63: "Moderate rain",
+        65: "Heavy rain",
+        71: "Slight snow",
+        73: "Moderate snow",
+        75: "Heavy snow",
+        80: "Slight rain showers",
+        81: "Moderate rain showers",
+        82: "Violent rain showers",
+        95: "Thunderstorm",
+        96: "Thunderstorm with slight hail",
+        99: "Thunderstorm with heavy hail"
+    };
 
-    if (code >= 1 && code <= 3) {
-        return "☁️ Partly cloudy";
-    }
-
-    if (code >= 51 && code <= 67) {
-        return "🌧️ Rain";
-    }
-
-    if (code >= 71 && code <= 77) {
-        return "❄️ Snow";
-    }
-
-    if (code >= 80 && code <= 82) {
-        return "🌧️ Rain showers";
-    }
-
-    if (code >= 95) {
-        return "⛈️ Thunderstorm";
-    }
-
-    return "🌤️ Weather conditions";
-
+    return descriptions[code] || "Unknown weather";
 }
 
-
-/* CREATE WARNING */
 
 function createWarning(current) {
 
-    const warning =
-        document.getElementById("warning-text");
-
+    const warningText = document.getElementById("warning-text");
 
     if (current.precipitation >= 10) {
 
-        warning.textContent =
-            "Heavy precipitation is currently being recorded. " +
-            "Residents should remain alert and follow official " +
-            "local weather and emergency instructions.";
+        warningText.textContent =
+            "⚠️ Heavy precipitation detected. Please stay alert.";
 
+    } else if (current.wind_speed_10m >= 50) {
+
+        warningText.textContent =
+            "⚠️ Strong winds detected. Please take necessary precautions.";
+
+    } else if (current.weather_code >= 95) {
+
+        warningText.textContent =
+            "⚠️ Thunderstorm detected. Please stay indoors.";
+
+    } else {
+
+        warningText.textContent =
+            "✅ No severe weather conditions detected.";
     }
-
-    else if (current.wind_speed_10m >= 50) {
-
-        warning.textContent =
-            "Strong winds are currently being recorded. " +
-            "Avoid unnecessary travel and stay away from " +
-            "unsafe structures.";
-
-    }
-
-    else if (current.weather_code >= 95) {
-
-        warning.textContent =
-            "Thunderstorm conditions are currently being " +
-            "reported. Stay indoors and avoid exposed areas.";
-
-    }
-
-    else {
-
-        warning.textContent =
-            "No major weather hazard detected by this " +
-            "weather-data check. Continue monitoring official " +
-            "emergency warnings.";
-
-    }
-
 }
 
-
-/* CREATE FORECAST */
 
 function createForecast(daily) {
 
     const container =
         document.getElementById("forecast-container");
 
-
     container.innerHTML = "";
 
+    for (let i = 0; i < daily.time.length; i++) {
 
-    for (let i = 0; i < 5; i++) {
+        const card = document.createElement("div");
 
-        const date =
-            new Date(daily.time[i]);
+        card.className = "forecast-card";
 
-
-        const day =
-            date.toLocaleDateString(
-                "en-IN",
-                {
-                    weekday: "short"
-                }
-            );
-
-
-        const description =
-            getWeatherDescription(
-                daily.weather_code[i]
-            );
-
-
-        const item =
-            document.createElement("div");
-
-
-        item.className =
-            "forecast-item";
-
-
-        item.innerHTML = `
-
-            <h3>${day}</h3>
-
-            <div class="forecast-icon">
-                ${description.split(" ")[0]}
-            </div>
-
-            <p>
-                ${description}
-            </p>
-
-            <p>
-                🌡️ Max:
-                ${daily.temperature_2m_max[i]}°C
-            </p>
-
-            <p>
-                🌧️ Rain:
-                ${daily.precipitation_sum[i]} mm
-            </p>
-
+        card.innerHTML = `
+            <h3>${daily.time[i]}</h3>
+            <p>🌡️ Max: ${daily.temperature_2m_max[i]} °C</p>
+            <p>🌧️ Rain: ${daily.precipitation_sum[i]} mm</p>
+            <p>💨 Wind: ${daily.wind_speed_10m_max[i]} km/h</p>
+            <p>${getWeatherDescription(daily.weather_code[i])}</p>
         `;
 
-
-        container.appendChild(item);
-
+        container.appendChild(card);
     }
-
 }
 
 
-/* RUN */
-
-getWeather();
+// Start the weather system
+getLocation();
