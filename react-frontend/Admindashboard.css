@@ -445,7 +445,16 @@
 
 @media (max-width: 600px) {
   .admin-profile {
+    display: flex;
+  }
+    .admin-avatar,
+  .admin-profile strong,
+  .admin-profile span {
     display: none;
+  }
+
+  .admin-logout-button {
+    margin-left: auto;
   }
 
   .page-heading {
