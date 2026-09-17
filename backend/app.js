@@ -3,14 +3,14 @@ const path=require('path');
 const app=express();  //creates an Express application object
 const axios = require('axios');
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..','frontend')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, '..','frontend', 'index.html'));
 });
 
 app.get('/home',(req,res)=>{
-    res.sendFile(path.join(__dirname,'public','home.html'))
+    res.sendFile(path.join(__dirname,'..','frontend','home.html'))
 });
 
 app.get('/api/weather', async (req, res) => {
