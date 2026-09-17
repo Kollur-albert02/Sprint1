@@ -1,4 +1,4 @@
-import { API_URL, APP_URL } from "../config";
+import { API_URL, APP_URL } from "./config";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
