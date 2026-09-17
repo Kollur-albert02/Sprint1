@@ -1,3 +1,4 @@
+import { API_URL } from "../config";
 import "./SignIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -18,7 +19,7 @@ function SignIn() {
         try {
 
             const response = await axios.post(
-                "http://localhost:5000/api/auth/login",
+                `${API_URL}/api/auth/login`,
                 {
                     email: email,
                     password: password
